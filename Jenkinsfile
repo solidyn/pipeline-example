@@ -38,11 +38,11 @@ node() {
          </testsuite>
       </testsuites>
       '''
-      step([$class: 'XUnitBuilder', testTimeMargin: '3000', thresholdMode: 1, 
-        thresholds: [[$class: 'FailedThreshold', failureNewThreshold: '1', failureThreshold: '1', unstableNewThreshold: '1', unstableThreshold: '1'], 
-        [$class: 'SkippedThreshold', failureNewThreshold: '1', failureThreshold: '1', unstableNewThreshold: '1', unstableThreshold: '1']], 
-        tools: [[$class: 'JUnitType', deleteOutputFiles: true, failIfNotNew: false, pattern: 'reports/**/*.xml', skipNoTestFiles: true, stopProcessingIfError: true]]])
     }
+    step([$class: 'XUnitBuilder', testTimeMargin: '3000', thresholdMode: 1, 
+      thresholds: [[$class: 'FailedThreshold', failureNewThreshold: '1', failureThreshold: '1', unstableNewThreshold: '1', unstableThreshold: '1'], 
+      [$class: 'SkippedThreshold', failureNewThreshold: '1', failureThreshold: '1', unstableNewThreshold: '1', unstableThreshold: '1']], 
+      tools: [[$class: 'JUnitType', deleteOutputFiles: true, failIfNotNew: false, pattern: 'reports/**/*.xml', skipNoTestFiles: true, stopProcessingIfError: true]]])
   }
   
   stage('Deploy to Integration') {
